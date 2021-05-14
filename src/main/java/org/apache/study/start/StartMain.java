@@ -23,13 +23,16 @@ public class StartMain {
     // SqlSessionFactory 创建 SqlSession
     try (SqlSession session = sqlSessionFactory.openSession()) {
       // 不建议使用的方法，旧版本中的
-      SysRole sysRole = session.selectOne("org.apache.study.start.SysRoleMapper.selectSysRole", 1);
-      System.out.println(sysRole);
+      //SysRole sysRole = session.selectOne("org.apache.study.start.SysRoleMapper.selectSysRole", 1);
+      //System.out.println(sysRole);
 
       // 建议使用的方法
       SysRoleMapper mapper = session.getMapper(SysRoleMapper.class);
+      /*SysRole sysRole1 = mapper.selectSysRole(2);
+      System.out.println(sysRole1);*/
+      System.out.println(mapper.LIST());
+      System.out.println(mapper.LIST2());
       SysRole sysRole1 = mapper.selectSysRole(2);
-      System.out.println(sysRole1);
     }
   }
 }

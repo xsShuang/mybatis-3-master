@@ -6,4 +6,7 @@
     <select id="selectSysRole" resultType="org.apache.study.start.SysRole">
         select * from sys_role where id = #{id}
     </select>
+  <select id="LIST" resultType="org.apache.study.start.SysRole">
+        select * from sys_role
+  </select>
 </mapper>
